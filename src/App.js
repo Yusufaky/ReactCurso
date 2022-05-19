@@ -1,13 +1,16 @@
-import FeedbackItem from "./components/FeedbackItem";
+import FeedbackList from "./components/FeedbackList";
 import Header from "./components/Header";
+import { useState } from "react";
+import FeedbackData from "./data/FeedbackData";
 
 function App() {
+  const [feedback, setFeedback] = useState(FeedbackData);
   return (
     <>
       <Header />
       <div className="container">
         <h1>My APP</h1>
-        <FeedbackItem />
+        <FeedbackList feedback={feedback} />
       </div>
     </>
   );
